@@ -1,16 +1,29 @@
 package projeto;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Utilizador {
 	private static int num = 0;
 	private int id;
 	private String nome;
 	private int idade;
+	private List<Aplicacao> aplicacoes;
 
 	public Utilizador(String nome, int idade) {
 		this.id = Utilizador.num;
 		Utilizador.num++;
 		this.nome = nome;
 		this.idade = idade;
+		aplicacoes = new ArrayList<Aplicacao>();
+	}
+
+	public List<Aplicacao> getAplicacoes() {
+		return aplicacoes;
+	}
+
+	public void setAplicacoes(List<Aplicacao> aplicacoes) {
+		this.aplicacoes = aplicacoes;
 	}
 
 	public static int getNum() {
@@ -37,4 +50,9 @@ public abstract class Utilizador {
 		this.idade = idade;
 	}
 
+	public void listarAplicacoes() {
+		for (Aplicacao apli : aplicacoes) {
+			System.out.println("Nome : " + apli.getNome());
+		}
+	}
 }

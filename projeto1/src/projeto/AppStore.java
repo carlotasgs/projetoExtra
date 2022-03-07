@@ -103,4 +103,13 @@ public class AppStore {
 		listarAplicacoes();
 	}
 
+	public double dinheiroPorAplicacao() {
+		double dinheiro = 0;
+
+		for (Compra com : compras) {
+			dinheiro += com.getPreco();
+		}
+
+		return dinheiro;
+	}
 }

@@ -99,4 +99,9 @@ public class Aplicacao {
 		this.totalVendas++;
 	}
 
+	public void listarClassificacoes() { // FAZER IF COMO COMENTARIO NAO E OBRIGATORIO
+		for (Avaliacao avi : avaliacaoA) {
+			System.out.println("Pontuação: " + avi.getAvaliacaoPontuacao() + " Comentário: " + avi.getComentario());
+		}
+	}
 }

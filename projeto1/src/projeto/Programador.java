@@ -7,12 +7,21 @@ public class Programador extends Utilizador {
 	private int totalAvaliacao;
 	private int mediaAvaliacao;
 	private List<Avaliacao> avaliacaoP;
+	private double totalCompras;
 
 	public Programador(String nome, int idade) {
 		super(nome, idade);
 		avaliacaoP = new ArrayList<Avaliacao>();
 		totalAvaliacao = 0;
 		mediaAvaliacao = 0;
+	}
+
+	public double getTotalCompras() {
+		return totalCompras;
+	}
+
+	public void setTotalCompras(double totalCompras) {
+		this.totalCompras = totalCompras;
 	}
 
 	public int getTotalAvaliacao() {
@@ -46,4 +55,7 @@ public class Programador extends Utilizador {
 		setMediaAvaliacao(totalAvaliacao / avaliacaoP.size());
 	}
 
+	public void incrementarTotalCompras(double preco) {
+		this.totalCompras += preco;
+	}
 }

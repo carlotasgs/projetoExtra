@@ -6,8 +6,6 @@ import java.util.List;
 
 public class Cliente extends Utilizador {
 	private List<Aplicacao> aplicacoesC;
-	private boolean isComprado;
-
 	private HashMap<String, Boolean> verificarAvaliacao;
 
 	public Cliente(String nome, int idade) {
@@ -20,6 +18,7 @@ public class Cliente extends Utilizador {
 		aplicacoesC.add(k);
 		verificarAvaliacao.put(k.getNome(), false);
 		k.incrementarTotalVendas();
+		k.getProgramador().incrementarTotalCompras(k.getPreco());
 	}
 
 	public void avaliar(Aplicacao x) {

@@ -17,6 +17,10 @@ public class Avaliacao {
 		this.comentario = comentario;
 	}
 
+	public Avaliacao(Cliente cliente, int avaliacaoPontuacao) { // PARA CASOS SEM COMENTARIO?
+		this.avaliacaoPontuacao = avaliacaoPontuacao;
+	}
+
 	public Cliente getCliente() {
 		return cliente;
 	}
