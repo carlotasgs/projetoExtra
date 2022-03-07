@@ -1,21 +1,17 @@
 package projeto;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public abstract class Utilizador {
-	private static int num=0;
+	private static int num = 0;
 	private int id;
 	private String nome;
 	private int idade;
-	
-	public Utilizador(Long id, String nome, int idade) {
-		this.id = this.num;
-		this.num++;
+
+	public Utilizador(String nome, int idade) {
+		this.id = Utilizador.num;
+		Utilizador.num++;
 		this.nome = nome;
 		this.idade = idade;
 	}
-
 
 	public static int getNum() {
 		return num;
@@ -24,7 +20,6 @@ public abstract class Utilizador {
 	public int getId() {
 		return id;
 	}
-
 
 	public String getNome() {
 		return nome;
