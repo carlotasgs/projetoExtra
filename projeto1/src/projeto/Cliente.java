@@ -20,6 +20,7 @@ public class Cliente extends Utilizador {
 		verificarAvaliacao.put(k.getNome(), false);
 		k.incrementarTotalVendas();
 		k.getProgramador().incrementarTotalCompras(k.getPreco());
+		avaliar(k);
 	}
 
 	public void avaliar(Aplicacao x) {
