@@ -18,6 +18,7 @@ public class Avaliacao {
 	}
 
 	public Avaliacao(Cliente cliente, int avaliacaoPontuacao) { // PARA CASOS SEM COMENTARIO?
+		this.cliente = cliente;
 		this.avaliacaoPontuacao = avaliacaoPontuacao;
 	}
 

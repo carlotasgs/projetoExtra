@@ -4,10 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Utilizador {
+	// Cada utilizador é caraterizado por um nome, idade, e número de utilizador
+	// único.
 	private static int num = 0;
 	private int id;
 	private String nome;
 	private int idade;
+
 	private List<Aplicacao> aplicacoes;
 
 	public Utilizador(String nome, int idade) {

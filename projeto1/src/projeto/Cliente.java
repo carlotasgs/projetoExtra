@@ -14,6 +14,7 @@ public class Cliente extends Utilizador {
 		verificarAvaliacao = new HashMap<String, Boolean>();
 	}
 
+	// Os clientes realizam compras na App Store
 	public void comprarAplicacao(Aplicacao k) {
 		aplicacoesC.add(k);
 		verificarAvaliacao.put(k.getNome(), false);

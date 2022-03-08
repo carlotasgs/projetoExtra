@@ -57,11 +57,11 @@ public class AppStore {
 
 	}
 
-	public void listaPorCategoria(String TipoAplicacao) {
+	public void listaPorCategoria(TipoAplicacao x) {
 
 		for (Aplicacao apli : aplicacoes) {
 
-			if (apli.getTipo().equals(TipoAplicacao)) {
+			if (apli.getTipo().equals(x)) {
 				System.out.println("Nome: " + apli.getNome());
 			}
 

@@ -88,8 +88,15 @@ public class Aplicacao {
 		this.totalVendas = totalVendas;
 	}
 
-	public void avaliar(Cliente x, int y, String k) {
-		Avaliacao a = new Avaliacao(x, y, k);
+	public void avaliar(Cliente x, int y) {
+		Avaliacao a = new Avaliacao(x, y);
+		avaliacaoA.add(a);
+		totalAvaliacao += y;
+		setMediaAvaliacao(totalAvaliacao / avaliacaoA.size());
+	}
+
+	public void avaliar(Cliente x, int y, String z) {
+		Avaliacao a = new Avaliacao(x, y);
 		avaliacaoA.add(a);
 		totalAvaliacao += y;
 		setMediaAvaliacao(totalAvaliacao / avaliacaoA.size());
