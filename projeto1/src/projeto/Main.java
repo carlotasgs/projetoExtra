@@ -1,5 +1,7 @@
 package projeto;
 
+import java.util.Calendar;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -32,8 +34,17 @@ public class Main {
 		System.out.println(programador2.getId());
 
 		// Realizar compras de aplicações.
-		((Cliente) cliente1).comprarAplicacao(inst);
-		((Cliente) cliente1).comprarAplicacao(face);
+		((Cliente) cliente1).comprarAplicacao(inst, c);
+		((Cliente) cliente1).comprarAplicacao(face, c);
+		((Cliente) cliente2).comprarAplicacao(face, c);
+
+		System.out.println(c.getCalendario().getTime());
+		System.out.println(c.getCalendario().get(Calendar.WEEK_OF_YEAR));
+
+		c.mudarData(9, 3, 2022);
+
+		System.out.println(c.getCalendario().getTime());
+		System.out.println(c.getCalendario().get(Calendar.WEEK_OF_YEAR));
 
 		// Listar todos os utilizadores da App Store. Para cada utilizador é mostrado o
 		// nome, idade, e número de utilizador.

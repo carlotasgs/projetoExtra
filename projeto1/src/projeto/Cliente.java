@@ -15,12 +15,20 @@ public class Cliente extends Utilizador {
 	}
 
 	// Os clientes realizam compras na App Store
-	public void comprarAplicacao(Aplicacao k) {
+	public void comprarAplicacao(Aplicacao k, AppStore c) {
+
+		List<Aplicacao> aplicacoes = new ArrayList<Aplicacao>();
+		aplicacoes.add(k);
+
 		aplicacoesC.add(k);
 		verificarAvaliacao.put(k.getNome(), false);
 		k.incrementarTotalVendas();
 		k.getProgramador().incrementarTotalCompras(k.getPreco());
 		avaliar(k);
+
+		Compra compra = new Compra(c.getCalendario().getTime(), k.getPreco(), this, aplicacoes);
+
+		c.adicionarCompras(compra);
 	}
 
 	public void avaliar(Aplicacao x) {

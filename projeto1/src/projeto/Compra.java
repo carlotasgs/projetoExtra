@@ -14,7 +14,8 @@ public class Compra {
 		this.data = data;
 		this.preco = preco;
 		this.cliente = cliente;
-		aplicacoes = new ArrayList<Aplicacao>();
+		this.aplicacoes = new ArrayList<Aplicacao>();
+		this.aplicacoes = aplicacoes;
 	}
 
 	public Date getData() {
