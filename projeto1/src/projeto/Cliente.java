@@ -25,16 +25,19 @@ public class Cliente extends Utilizador {
 
 	public void avaliar(Aplicacao x) {
 
+		boolean temAplicacao = false;
+
 		for (Aplicacao apli : aplicacoesC) {
 			if (apli.getNome().equals(x.getNome())) {
-				if (verificarAvaliacao.get(x.getNome())) {
-
-				}
-
-			} else {
-				System.out.println("Não pode avaliar a aplicação " + x.getNome() + " sem ter comprado a aplicação");
+				temAplicacao = true;
+				break;
 			}
 		}
+
+		if (!temAplicacao) {
+			System.out.println("Não pode avaliar a aplicação " + x.getNome() + " sem ter comprado a aplicação");
+		}
+
 	}
 
 	public List<Aplicacao> getAplicacoesC() {
@@ -45,4 +48,7 @@ public class Cliente extends Utilizador {
 		this.aplicacoesC = aplicacoesC;
 	}
 
+	public void subscrever(Aplicacao aplicacao) {
+
+	}
 }

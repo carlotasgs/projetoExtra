@@ -3,7 +3,7 @@ package projeto;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Aplicacao {
+public class Aplicacao implements Descontavel {
 	private String nome;
 	private double preco;
 	private TipoAplicacao tipo;
@@ -11,6 +11,8 @@ public class Aplicacao {
 	private List<Avaliacao> avaliacaoA;
 	private int totalAvaliacao;
 	private int mediaAvaliacao;
+
+	private double percentagem;
 
 	private int totalVendas;
 
@@ -110,5 +112,14 @@ public class Aplicacao {
 		for (Avaliacao avi : avaliacaoA) {
 			System.out.println("Pontuação: " + avi.getAvaliacaoPontuacao() + " Comentário: " + avi.getComentario());
 		}
+	}
+
+	@Override
+	public double descontar() {
+		return preco * percentagem;
+	}
+
+	public double pagar() {
+		return preco - descontar();
 	}
 }

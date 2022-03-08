@@ -3,6 +3,7 @@ package projeto;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
 
 public class AppStore {
@@ -14,6 +15,7 @@ public class AppStore {
 		utilizadores = new ArrayList<Utilizador>();
 		aplicacoes = new ArrayList<Aplicacao>();
 		compras = new ArrayList<Compra>();
+
 	}
 
 	public List<Utilizador> getUtilizadores() {
@@ -111,5 +113,31 @@ public class AppStore {
 		}
 
 		return dinheiro;
+	}
+
+	public void aplicacoesMenosCompradas() {
+
+		for (Compra com : compras) {
+
+			for (Aplicacao apli : com.getAplicacoes()) {
+
+				HashMap<String, Integer> xAplicacaoComprada = new HashMap<String, Integer>();
+
+				int somar = 0;
+				somar += apli.getTotalVendas();
+
+				xAplicacaoComprada.put(apli.getNome(), somar);
+
+				if (xAplicacaoComprada.containsKey(apli.getNome())) {
+					xAplicacaoComprada.put(apli.getNome(), xAplicacaoComprada.get(apli.getNome()) + 1);
+				} else {
+					xAplicacaoComprada.put(apli.getNome(), 1);
+				}
+
+				int dias = Days.daysBetween(apli.get, dataFinal).getDays();
+
+			}
+
+		}
 	}
 }

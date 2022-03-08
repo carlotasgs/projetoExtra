@@ -1,6 +1,7 @@
 package projeto;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -9,11 +10,16 @@ public class Compra {
 	private double preco;
 	private Cliente cliente;
 	private List<Aplicacao> aplicacoes;
+	private Saco saco;
 
-	public Compra(Date data, double preco, Cliente cliente) {
+	public Compra(Date data, double preco, Cliente cliente, Saco saco) {
+
 		this.data = data;
-		this.preco = preco;
+
+		this.preco = saco.valorConteudo();
+
 		this.cliente = cliente;
+		this.saco = saco;
 		aplicacoes = new ArrayList<Aplicacao>();
 	}
 
@@ -47,6 +53,12 @@ public class Compra {
 
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
+	}
+
+	public int compraPorSemana() {
+		Calendar calendario = Calendar.getInstance();
+		calendario.setTime(data);
+		return calendario.get(Calendar.WEEK_OF_YEAR);
 	}
 
 }
